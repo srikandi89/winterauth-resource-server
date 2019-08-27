@@ -33,9 +33,8 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http
-                .httpBasic().disable().anonymous().and()
+                .anonymous().and()
                 .authorizeRequests()
-                .antMatchers("/private/**").authenticated()
                 .antMatchers("/public/**").permitAll();
     }
 }
